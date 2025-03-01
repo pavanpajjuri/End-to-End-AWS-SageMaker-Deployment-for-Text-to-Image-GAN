@@ -69,6 +69,7 @@ This document provides a detailed step-by-step explanation of the AWS SageMaker 
 ### **Possible Issues and Fixes**
 - `FileNotFoundError`: Dataset path incorrect while loading.  
   **Fix:** Verified file existence in S3 before running the script.
+- If the sagemaker region and s3 region are different, cross-region writing is not supported.
 - `RuntimeError: CUDA out of memory`: The notebook instance lacked GPU memory.  
   **Fix:** Used a smaller batch size (`batch_size=32`) or switched to `ml.g4dn.xlarge` (GPU-enabled).
 
@@ -199,5 +200,3 @@ This document provides a detailed step-by-step explanation of the AWS SageMaker 
 - Automate model retraining using **SageMaker Pipelines**.
 - Deploy the model as a **real-time API using AWS Lambda and API Gateway**.
 - Set up **AutoScaling** to optimize costs.
-
-This document serves as a complete reference for the AWS SageMaker workflow.
